@@ -1,0 +1,282 @@
+﻿<Page x:Class="Дипломчик.PageMain"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:Дипломчик"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="PageMain">
+
+    <Grid Background="#FFFDCA">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+
+        <ToolBar VerticalAlignment="Top" Background="#FFFDCA">
+            <Button Content="Справка" FontSize="20" Click="Button_Click_18"/>
+            <Button Content="О программе" FontSize="20" Margin="10,0,0,0" Click="Button_Click_17"/>
+        </ToolBar>
+
+        <TabControl Grid.Row="1" x:Name="tabControl" FontSize="20" Background="#FFFDCA" FontWeight="Bold">
+            <!--
+            <TabControl.Resources>
+                <Style TargetType="TabItem">
+                    <Setter Property="FontWeight" Value="Bold"/>
+                </Style>
+            </TabControl.Resources>
+            -->
+            
+            <TabItem x:Name="tabItemSizes" Header="Размеры"  Background="#FFFDCA">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition/>
+                    </Grid.RowDefinitions>
+
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition/>
+                        <ColumnDefinition Width="200"/>
+                    </Grid.ColumnDefinitions>
+
+                    <StackPanel Grid.Row="0" Grid.Column="0">
+                        <TextBlock Text="Поиск" Style="{StaticResource textBlockFilter}"/>
+                        <TextBox x:Name="textBoxFilterSizes" Style="{StaticResource textBoxFilterStyle}" TextChanged="textBoxFilterSizes_TextChanged"/>
+                    </StackPanel>
+
+                    <DataGrid x:Name="dataGridSizes" Grid.Row="1" Grid.Column="0" Margin="10" Style="{StaticResource dataGridStyle}">
+                        <DataGrid.Columns>
+                            <DataGridTextColumn Width="Auto" Header="Id" Binding="{Binding Id}"/>
+                            <DataGridTextColumn Width="*" Header="Размер" Binding="{Binding Name}"/>
+                        </DataGrid.Columns>
+                    </DataGrid>
+
+                    <Grid Grid.Row="0" Grid.Column="1" Grid.RowSpan="2">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition/>
+                        </Grid.RowDefinitions>
+
+                        <Button Grid.Row="0" Grid.Column="0" Height="50" Margin="10" Style="{StaticResource ButtonStyle}" Content="Добавить" Click="Button_Click_9"/>
+                        <Button Grid.Row="1" Grid.Column="0" Height="50" Margin="10" Style="{StaticResource ButtonStyle}" Content="Изменить" Click="Button_Click_10"/>
+                        <Button Grid.Row="2" Grid.Column="0" Height="50" Margin="10" Style="{StaticResource ButtonStyle}" Content="Удалить" Click="Button_Click_11"/>
+                    </Grid>
+                </Grid>
+            </TabItem>
+
+
+            <TabItem x:Name="tabItemUniforms" Header="Обмундирование"  Background="#FFFDCA">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition/>
+                    </Grid.RowDefinitions>
+
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition/>
+                        <ColumnDefinition Width="200"/>
+                    </Grid.ColumnDefinitions>
+
+                    <StackPanel Grid.Row="0" Grid.Column="0">
+                        <TextBlock Text="Поиск" Style="{StaticResource textBlockFilter}"/>
+                        <TextBox x:Name="textBoxFilterUniforms" Style="{StaticResource textBoxFilterStyle}" TextChanged="textBoxFilterUniforms_TextChanged"/>
+                    </StackPanel>
+
+                    <DataGrid x:Name="dataGridUniforms" Grid.Row="1" Grid.Column="0" Margin="10" Style="{StaticResource dataGridStyle}">
+                        <DataGrid.Columns>
+                            <DataGridTextColumn Width="Auto" Header="Id" Binding="{Binding Id}"/>
+                            <DataGridTextColumn Width="Auto" Header="Номер" Binding="{Binding Number}"/>
+                            <DataGridTextColumn Width="*" Header="Название" Binding="{Binding Name}"/>
+                            <DataGridTextColumn Width="Auto" Header="Срок ношения" Binding="{Binding Period}"/>
+                        </DataGrid.Columns>
+                    </DataGrid>
+
+                    <Grid Grid.Row="0" Grid.Column="1" Grid.RowSpan="2">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition/>
+                        </Grid.RowDefinitions>
+
+                        <Button Grid.Row="0" Grid.Column="0" Height="50" Margin="10" Style="{StaticResource ButtonStyle}" Content="Добавить" Click="Button_Click_1"/>
+                        <Button Grid.Row="1" Grid.Column="0" Height="50" Margin="10" Style="{StaticResource ButtonStyle}" Content="Изменить" Click="Button_Click"/>
+                        <Button Grid.Row="2" Grid.Column="0" Height="50" Margin="10" Style="{StaticResource ButtonStyle}" Content="Удалить" Click="Button_Click_2"/>
+                    </Grid>
+                </Grid>
+
+            </TabItem>
+
+
+            <TabItem x:Name="tabItemEmployees" Header="Сотрудники"  Background="#FFFDCA">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition/>
+                    </Grid.RowDefinitions>
+
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition/>
+                        <ColumnDefinition Width="200"/>
+                    </Grid.ColumnDefinitions>
+
+                    <StackPanel Grid.Row="0" Grid.Column="0">
+                        <TextBlock Text="Поиск" Style="{StaticResource textBlockFilter}"/>
+                        <TextBox x:Name="textBoxFilterEmployees" Style="{StaticResource textBoxFilterStyle}" TextChanged="textBoxFilterEmployees_TextChanged"/>
+                    </StackPanel>
+
+                    <DataGrid x:Name="dataGridEmployees" Grid.Row="1" Grid.Column="0" Margin="10" Style="{StaticResource dataGridStyle}">
+                        <DataGrid.Columns>
+                            <DataGridTextColumn Width="Auto" Header="Id" Binding="{Binding Id}"/>
+                            <DataGridTextColumn Width="*" Header="ФИО" Binding="{Binding Name}"/>
+                            <DataGridTextColumn Width="Auto" Header="Дата рождения" Binding="{Binding BirthdayStr}"/>
+                            <DataGridTextColumn Width="Auto" Header="Размер" Binding="{Binding Size}"/>
+                        </DataGrid.Columns>
+                    </DataGrid>
+
+                    <Grid Grid.Row="0" Grid.Column="1" Grid.RowSpan="2">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition/>
+                        </Grid.RowDefinitions>
+
+                        <Button Grid.Row="0" Grid.Column="0" Height="50" Margin="10" Style="{StaticResource ButtonStyle}" Content="Добавить" Click="Button_Click_3"/>
+                        <Button Grid.Row="1" Grid.Column="0" Height="50" Margin="10" Style="{StaticResource ButtonStyle}" Content="Изменить" Click="Button_Click_4"/>
+                        <Button Grid.Row="2" Grid.Column="0" Height="50" Margin="10" Style="{StaticResource ButtonStyle}" Content="Удалить" Click="Button_Click_5"/>
+                    </Grid>
+                </Grid>
+            </TabItem>
+
+
+            <TabItem Header="Выдача"  Background="#FFFDCA">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition/>
+                    </Grid.RowDefinitions>
+
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition/>
+                        <ColumnDefinition Width="200"/>
+                    </Grid.ColumnDefinitions>
+
+
+
+                    <StackPanel Grid.Row="0" Grid.Column="0">
+                        <TextBlock Text="Поиск" Style="{StaticResource textBlockFilter}"/>
+                        <TextBox x:Name="textBoxFilterIssueds" Style="{StaticResource textBoxFilterStyle}" TextChanged="textBoxFilterIssueds_TextChanged"/>
+                    </StackPanel>
+
+                    <DataGrid x:Name="dataGridIssueds" Grid.Row="1" Grid.Column="0" Margin="10" Style="{StaticResource dataGridStyle}">
+                        <DataGrid.Columns>
+                            <DataGridTextColumn Width="Auto" Header="Id" Binding="{Binding Id}"/>
+                            <DataGridTextColumn Width="*" Header="Сотрудник" Binding="{Binding Employee}"/>
+                            <DataGridTextColumn Width="Auto" Header="Форма" Binding="{Binding Uniform}"/>
+                            <DataGridTextColumn Width="Auto" Header="Выдана" Binding="{Binding IssuedDateStr}"/>
+                            <DataGridTextColumn Width="Auto" Header="До" Binding="{Binding ToDateStr}"/>
+                            <DataGridTextColumn Width="Auto" Header="Сдана" Binding="{Binding ReturnedText}"/>
+                        </DataGrid.Columns>
+                    </DataGrid>
+
+                    <Grid Grid.Row="0" Grid.Column="1" Grid.RowSpan="2">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition/>
+                        </Grid.RowDefinitions>
+
+                        <Button Grid.Row="0" Grid.Column="0" Height="50" Margin="10" Style="{StaticResource ButtonStyle}" Content="Добавить" Click="Button_Click_12"/>
+                        <Button Grid.Row="1" Grid.Column="0" Height="50" Margin="10" Style="{StaticResource ButtonStyle}" Content="Изменить" Click="Button_Click_13"/>
+                        <Button Grid.Row="2" Grid.Column="0" Height="50" Margin="10" Style="{StaticResource ButtonStyle}" Content="Удалить" Click="Button_Click_14"/>
+                    </Grid>
+                </Grid>
+            </TabItem>
+
+            <TabItem x:Name="tabItemReports" Header="Отчеты"  Background="#FFFDCA">
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="Auto"/>
+                        <ColumnDefinition/>
+                    </Grid.ColumnDefinitions>
+
+                    <Grid.RowDefinitions>
+                        <RowDefinition/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition/>
+                    </Grid.RowDefinitions>
+
+                    <TextBlock Grid.Row="0" Grid.Column="0" Text="Тип отчета:" Style="{StaticResource textBlockEditLable}"/>
+                    <ComboBox x:Name="comboBoxReport" Grid.Row="0" Grid.Column="1" Style="{StaticResource comboBoxEditStyle}" SelectionChanged="ComboBox_SelectionChanged">
+                        <ComboBoxItem Content="Отчет обмундирования"/>
+                        <ComboBoxItem Content="Отчет выданного обмундирования"/>
+                        <ComboBoxItem Content="Отчет сданного обмундирования"/>
+                        <ComboBoxItem Content="Отчет о сдаче формы в текущем месяце"/>
+                    </ComboBox>
+
+                    <TextBlock x:Name="textBlockReportStart" Grid.Row="1" Grid.Column="0" Text="Начальная дата:" Style="{StaticResource textBlockEditLable}"/>
+                    <DatePicker x:Name="datePickerReportStart" Grid.Row="1" Grid.Column="1" d:Text="12.12.2012" Style="{StaticResource datePickerEditStyle}"/>
+
+                    <TextBlock x:Name="textBlockReportEnd" Grid.Row="2" Grid.Column="0" Text="Конечная дата:" Style="{StaticResource textBlockEditLable}"/>
+                    <DatePicker x:Name="datePickerReportEnd" Grid.Row="2" Grid.Column="1"  d:Text="13.13.2013" Style="{StaticResource datePickerEditStyle}"/>
+
+                    <Button Grid.Row="3" Grid.Column="0" Grid.ColumnSpan="2" Margin="40,0,40,0" Content="Составить отчет" Style="{StaticResource ButtonStyle}" Height="60" Click="Button_Click_19"/>
+                </Grid>
+            </TabItem>
+            
+            <TabItem x:Name="tabItemUsers" Header="Пользователи"  Background="#FFFDCA">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition/>
+                    </Grid.RowDefinitions>
+
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition/>
+                        <ColumnDefinition Width="200"/>
+                    </Grid.ColumnDefinitions>
+
+                    <StackPanel Grid.Row="0" Grid.Column="0">
+                        <TextBlock Text="Поиск" Style="{StaticResource textBlockFilter}"/>
+                        <TextBox x:Name="textBoxFilterUsers" Style="{StaticResource textBoxFilterStyle}" TextChanged="textBoxFilterUsers_TextChanged"/>
+                    </StackPanel>
+
+                    <DataGrid x:Name="dataGridUsers" Grid.Row="1" Grid.Column="0" Margin="10" Style="{StaticResource dataGridStyle}">
+                        <DataGrid.Columns>
+                            <DataGridTextColumn Width="Auto" Header="Id" Binding="{Binding Id}"/>
+                            <DataGridTextColumn Width="*" Header="ФИО" Binding="{Binding Name}"/>
+                            <DataGridTextColumn Width="Auto" Header="Логин" Binding="{Binding Login}"/>
+                            <DataGridTextColumn Width="Auto" Header="Пароль" Binding="{Binding Password}"/>
+                            <DataGridTextColumn Width="Auto" Header="Роль" Binding="{Binding Role}"/>
+                        </DataGrid.Columns>
+                    </DataGrid>
+
+                    <Grid Grid.Row="0" Grid.Column="1" Grid.RowSpan="2">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition/>
+                        </Grid.RowDefinitions>
+
+                        <Button Grid.Row="0" Grid.Column="0" Height="50" Margin="10" Style="{StaticResource ButtonStyle}" Content="Добавить" Click="Button_Click_6"/>
+                        <Button Grid.Row="1" Grid.Column="0" Height="50" Margin="10" Style="{StaticResource ButtonStyle}" Content="Изменить" Click="Button_Click_7"/>
+                        <Button Grid.Row="2" Grid.Column="0" Height="50" Margin="10" Style="{StaticResource ButtonStyle}" Content="Удалить" Click="Button_Click_8"/>
+                    </Grid>
+                </Grid>
+            </TabItem>
+
+        </TabControl>
+    </Grid>
+</Page>
